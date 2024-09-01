@@ -68,3 +68,7 @@ int matrix[3][3] = {
 
 [CARとCDR](https://ja.wikipedia.org/wiki/CARとCDR)
 [【AutoLISP】car部とcdr部を取得する関数「car」「cdr」](https://alraku.com/car-cdr/2324/)
+
+### スタック
+
+典型的には配列を使って実装される。ただし、連結リストを使う場合もあり、例えばリアルタイムシステムではある一定の時間内に処理を終わらせる必要があるので、その場合はダブリングが起こってしまう配列よりも、連結リストが使われる。
