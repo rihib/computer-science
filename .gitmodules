@@ -1,0 +1,6 @@
+[submodule "AlgorithmicFoundations/leetcode"]
+	path = AlgorithmicFoundations/leetcode
+	url = https://github.com/rihib/leetcode.git
+[submodule "OperatingSystems/learn-os-on-weekends"]
+	path = OperatingSystems/learn-os-on-weekends
+	url = https://github.com/rihib/learn-os-on-weekends.git
