@@ -106,7 +106,7 @@ int matrix[3][3] = {
 
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="./images/graph.png" width="300" alt="グラフ">
-  <img src="./images/graph-table.png" width="300" alt="グラフの表">
+  <img src="./images/graph-table.png" width="300" alt="隣接行列">
 </div>
 
 隣接リストはメモリをあまり使わないため、特にエッジの数が少ない疎グラフ（sparse graph）に対して有効であり、隣接頂点の列挙が容易である。ただ、エッジの存在を確認するのにリストの探索が必要であり、時間がかかるという欠点がある。
