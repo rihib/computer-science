@@ -136,3 +136,9 @@ $$A = \begin{bmatrix} 0 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$$
 $$
 A^2 = A \times A = \begin{bmatrix} 0 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} \times \begin{bmatrix} 0 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}
 $$
+
+## 木
+
+### 木の走査
+
+走査の手順としてよく使われるのは、前順走査（pre-order traversal）、間順走査（in-order traversal）、後順走査（post-order traversal）の３つである。前順走査は親ノードを調べてから子ノードを調べ、間順走査は最初の子ノードを調べてから親ノードを調べて残りの子ノードを調べ、後順走査は子ノードを全部調べてから親ノードを調べる。ルートから全てのノードを反時計回りするように一筆書きしたとき、前順走査はノードの左側を通った順番、間順走査はノードの下側を通った順番、後順走査はノードの右側を通った順番になる。詳細は[うさぎでもわかる2分探索木　後編　2分探索木における4つの走査方法](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse)を参照。
