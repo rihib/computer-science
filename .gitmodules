@@ -4,3 +4,6 @@
 [submodule "OperatingSystems/learn-os-on-weekends"]
 	path = OperatingSystems/learn-os-on-weekends
 	url = https://github.com/rihib/learn-os-on-weekends.git
+[submodule "ParallelAndDistributedComputing/lamport-clock-simulator"]
+	path = ParallelAndDistributedComputing/lamport-clock-simulator
+	url = https://github.com/rihib/lamport-clock-simulator.git
