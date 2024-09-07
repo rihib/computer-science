@@ -68,8 +68,7 @@ int matrix[3][3] = {
 
 関数型言語では連結リストの実装時にCARやCDRなどが使われる。連結リストのノードをコンスセルと呼び、コンスセルにはCARとCDRという２つのフィールドがある。CARに要素が格納され、CDRに次のコンスセルへのポインタが格納される。最後のCDRにはポインタではなくnilが格納されることでリストの終端を表す。
 
-[CARとCDR](https://ja.wikipedia.org/wiki/CARとCDR)
-
+[CARとCDR](https://ja.wikipedia.org/wiki/CARとCDR)<br>
 [【AutoLISP】car部とcdr部を取得する関数「car」「cdr」](https://alraku.com/car-cdr/2324/)
 
 ## スタック

@@ -123,6 +123,24 @@ $$
   <img src="./images/hashtable-performance.png" width="300" alt="ハッシュテーブルのパフォーマンス">
 </div>
 
+## 実際の実装
+
+### Goの`map`
+
+Goのマップはハッシュテーブルとして実装されており、バケットからなる。バケットは最大８つのエントリ（キーと値のペア）を保持する配列である。初期サイズを設定せずに作成した場合、デフォルトのバケット数は１である。バケットの負荷係数（load factor）が一定の閾値（6.5）を超えるとバケット数が 2 倍になり、マップが拡張される。6.5という値はハードコードされており、メモリ使用量を最適化するために選択された。
+
+キーに対してハッシュ関数が使用され、生成されたハッシュ値がバケット配列のどのバケットを選択するか決定する要素となる。選択されたバケットが全て埋まっている場合は、オーバーフローバケットを作ってエントリを追加し、連結リストとして繋げる。オーバーフローバケットが増えるとエントリを追加する時間計算量がO(n)に近づき、パフォーマンスが低下してしまうため、バケットあたりに平均6.5個（約80%）以上のエントリが追加されるようになったら、Goランタイムはマップを理ハッシュし、バケット数を倍に拡張する。
+
+バケット自体は配列として実装されているため、同じバケット内のエントリは連続したメモリアドレスに配置されるが、バケット同士（オーバーフローバケットも含む）は連続していないため、キャッシュ効率は低くなる。
+
+[Memory Allocation and Performance in Golang Maps](https://levelup.gitconnected.com/memory-allocation-and-performance-in-golang-maps-b267b5ad9217)<br>
+[Some insights on Maps in Golang](https://hackernoon.com/some-insights-on-maps-in-golang-rm5v3ywh)<br>
+[【Go】Mapの内部構造とO(1)のメカニズム](https://zenn.dev/smartshopping/articles/5df9c3717e25bd)
+
+### C++の`std::map`
+
+C++の`std::map`は平衡二分探索木（赤黒木）として実装されている（[参考](https://en.cppreference.com/w/cpp/container/map)）。
+
 ## 参考
 
 [Hash table - Wikipedia](https://en.wikipedia.org/wiki/Hash_table)
