@@ -1,1 +1,1 @@
-# Algorithmic Foundations
+# アルゴリズム
