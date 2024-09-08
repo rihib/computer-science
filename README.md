@@ -1,1 +1,1 @@
-# Computer Science
+# コンピュータサイエンスの基礀知識
