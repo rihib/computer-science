@@ -222,7 +222,10 @@ AVL木は最悪の場合、理論上は完全二分木の1.44倍の高さにな�
 
 ### 二分探索
 
-探索の時間計算量は$$O(\log n)$$である。ただし、二分探索はソートされた配列に対してのみ有効であるため、ソートするためにかかる時間計算量を考慮すると、最悪計算量は$$O(n \log n)$$になる。
+探索の時間計算量は$$O(\log n)$$である。ただし、二分探索はソートされた配列に対してのみ有効であるため、ソートするためにかかる時間計算量を考慮すると、最悪計算量は$$O(n \log n)$$になる。二分探索の実装についての詳細は[別ページ](./binary-search.md)を参照。
+
+[LeetCode - Binary Search](https://github.com/rihib/leetcode/pull/27)
+[LeetCode - First Bad Version](https://github.com/rihib/leetcode/pull/33)
 
 ### 知識なし深さ優先/幅優先探索
 
