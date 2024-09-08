@@ -6,7 +6,7 @@
 
 半閉区画の場合、`right`は常に探索済みの範囲に含める必要がある。そのため範囲外のインデックス（`len(nums)`）で初期化する必要があるし、すでに探索済みの値（`mid`）で更新する必要がある。また`left == right`になるということは`left`も探索済みとなり、全ての探索が終了したことがわかるので、探索を終了する必要がある。
 
-```Go
+```go
 // 半閉区画（最初に見つけたtargetのインデックスを返す）
 // nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;のとき、インデックス5が返される
 func search(nums []int, target int) int {
@@ -28,7 +28,7 @@ func search(nums []int, target int) int {
 
 `target`未満の値の場合は`false`、`target`以上の値の場合は`true`だとすると、探索対象の数列は`[false, false, ..., true, true, ...]`のようなbool値の集合と捉えることができる。`false`と`true`の境界にいる場合は`left`は`mid + 1`で`false`から`true`に更新される。一方で、`right`は`mid`が`true`の場合に`mid`で更新されるので、常に`true`の範囲内に居続ける（インデックスの範囲外も`true`とみなすなら）し、いきなり`right`が`left`を飛び越える（`right < left`）ことはない。そのため、下記のように書くこともできる。
 
-```Go
+```go
 // 半閉区画（最初に見つけたtargetのインデックスを返す）
 // nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;のとき、インデックス5が返される
 func search(nums []int, target int) int {
@@ -61,7 +61,7 @@ func search(nums []int, target int) int {
 
 `left == right`になったとき、`left`と`right`はともに一番最初にある`true`にいるが、全て`false`の場合は`right`は範囲外のインデックスのまま動かないし、`true`が存在するとしても`target`自体は存在しない可能性が考えられるので、このときの`left`または`right`の値が`target`と一致するかを確認する必要がある。
 
-```Go
+```go
 // 半閉区画（境界の右側を返す）
 // nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;のとき、インデックス2が返される
 func search(nums []int, target int) int {
@@ -81,7 +81,7 @@ func search(nums []int, target int) int {
 }
 ```
 
-```Go
+```go
 // 半閉区画（境界の右側を返す）
 // nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;のとき、インデックス2が返される
 func search(nums []int, target int) int {
@@ -111,7 +111,7 @@ func search(nums []int, target int) int {
 
 ちなみに下記の実装では`nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;`のとき、インデックス4が返される。半閉区画と違って`right`が`len(nums)-1`で初期化されているためである。この実装は`target`ならなんでも良いので返すという実装なので、どのインデックスを返そうがあまり大きな違いはない。
 
-```Go
+```go
 // 閉区画（最初に見つけたtargetのインデックスを返す）
 // nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;のとき、インデックス4が返される
 func search(nums []int, target int) int {
@@ -135,7 +135,7 @@ func search(nums []int, target int) int {
 
 `right < left`となった瞬間、`right`は`false`の範囲内に入ってしまっているが、`left`は必ず一番最初にある`true`にいる。そのため、下記のようにも書くことができる。一方で、閉区画のように`right`を返すことはできない。
 
-```Go
+```go
 // 閉区画（境界の右側を返す）
 // nums := []int{0, 0, 1, 1, 1, 1, 1, 1, 1, 1}; target := 1;のとき、インデックス2が返される
 func search(nums []int, target int) int {
