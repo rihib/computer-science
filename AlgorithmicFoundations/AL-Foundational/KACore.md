@@ -40,7 +40,9 @@
 
 $$k$$を桁数（文字数）とすると、各桁ごとに行うバケットソートやカウントソートの時間計算量はバケツ数が固定であることから$$O(n)$$であり、それを$$k$$回繰り返すため、基数ソートの時間計算量は$$O(nk)$$になるが、$$k$$は固定値であるため、実際は$$O(n)$$であると言える。そのため、実用的なアルゴリズムとしては最高速である。ただし、例えばクイックソートと比べてどちらが速いかは慎重な検討を要する。$$k$$の大きさや個々の操作に要する時間によっては、クイックソートの方が速いこともありうる。
 
-[基数ソート](https://ja.wikipedia.org/wiki/基数ソート)<br
+[このスライド](https://www.docswell.com/s/kumagi/KYWWPE-fear-l1-cache)も面白いので見ておくと良い。最近のCPUではTAGEという分岐予測技術が使われている（[参考](https://pc.watch.impress.co.jp/docs/column/kaigai/1192296.html)）。
+
+[基数ソート](https://ja.wikipedia.org/wiki/基数ソート)<br>
 [GPU最速ソート! Radix Sort その①](https://qiita.com/tommyecguitar/items/3c1897bceda4a06beef2)
 
 ## マッチング
